@@ -42,4 +42,4 @@ function normalize(data) {
     };
 }
 
-export { normalize };
+export default normalize;

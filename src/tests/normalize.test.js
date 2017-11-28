@@ -1,5 +1,5 @@
 import { schemas } from '../utils/schema';
-import { normalize } from '../utils/normalize';
+import normalize from '../utils/normalize';
 
 const phoneItem = {
     data: {
