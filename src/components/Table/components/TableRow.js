@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import sn from 'classnames';
 import '../styles/Table.css';
 import { columnsType, itemType } from '../const';
 import ToggleButton from './ToggleButton';
@@ -9,6 +10,7 @@ class TableRow extends React.Component {
         item: itemType.isRequired,
         columns: columnsType.isRequired,
         columnKey: PropTypes.func.isRequired,
+        order: PropTypes.oneOf('even', 'odd'),
     };
 
     constructor(props) {
@@ -23,10 +25,16 @@ class TableRow extends React.Component {
 
     renderRow() {
         const { expanded } = this.state;
-        const { item, columns, columnKey } = this.props;
+        const { item, columns, columnKey, order } = this.props;
 
         return (
-            <tr key="row">
+            <tr
+                key="row"
+                className={sn('table__row', {
+                    'table__row--even': order === 'even',
+                    'table__row--odd': order === 'odd',
+                })}
+            >
                 <td key="$first" className="table__cell">
                     {!!item.children && <ToggleButton opened={expanded} onClick={this._toggle} />}
                 </td>

@@ -20,8 +20,14 @@ const Table = ({ title, items, columns, className, itemKey, columnKey }) => {
                 </tr>
             </thead>
             <tbody>
-                {items.map(item => (
-                    <TableRow key={itemKey(item)} item={item} columns={columns} columnKey={columnKey} />
+                {items.map((item, i) => (
+                    <TableRow
+                        key={itemKey(item)}
+                        item={item}
+                        columns={columns}
+                        columnKey={columnKey}
+                        order={i % 2 === 0 ? 'even' : 'odd'}
+                    />
                 ))}
             </tbody>
         </table>

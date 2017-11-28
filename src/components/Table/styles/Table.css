@@ -26,6 +26,14 @@
   text-align: left;
 }
 
+.table__row--even {
+  background: #fafafa;
+}
+
+.table__row--odd {
+  background: #f7f7f7;
+}
+
 .table__head {
   padding: 12px 10px;
   background: #ececec;
