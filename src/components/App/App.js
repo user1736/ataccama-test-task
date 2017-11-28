@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import logo from '../assets/logo.svg';
-import '../styles/App.css';
-import Table from './Table';
+import logo from '../../assets/logo.svg';
+import './App.css';
+import Table from '../Table';
+
+const Sample = () => <div style={{ background: 'cyan', padding: 20 }}>TEST</div>;
 
 class App extends Component {
     render() {
@@ -29,11 +31,13 @@ class App extends Component {
                             id: 1,
                             foo: 'foo',
                             bar: 'bar',
+                            children: <Sample />,
                         },
                         {
                             id: 2,
                             foo: 'foo',
                             bar: 'bar',
+                            children: <Sample />,
                         },
                     ]}
                 />
