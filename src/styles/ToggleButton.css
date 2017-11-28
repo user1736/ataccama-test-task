@@ -1,0 +1,21 @@
+.toggle-button {
+  width: 26px;
+  padding: 4px;
+  border: none;
+  background: transparent;
+
+  box-sizing: border-box;
+
+  text-align: center;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: bold;
+  color: #333;
+
+  transition: color 0.3s ease-out;
+}
+
+.toggle-button:hover {
+  cursor: pointer;
+  color: #1976D2;
+}

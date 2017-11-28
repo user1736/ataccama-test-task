@@ -1,18 +1,42 @@
 import React, { Component } from 'react';
 import logo from '../assets/logo.svg';
 import '../styles/App.css';
+import Table from './Table';
 
 class App extends Component {
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React</h1>
+            <div className="app">
+                <header className="app__header">
+                    <img src={logo} className="app__logo" alt="logo" />
+                    <h1 className="App-title">Ataccama Test Task</h1>
                 </header>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
+                <Table
+                    className="app__table"
+                    title="shiny_table"
+                    columns={[
+                        {
+                            name: 'foo',
+                            renderItem: item => item.foo,
+                        },
+                        {
+                            name: 'bar',
+                            renderItem: item => item.bar,
+                        },
+                    ]}
+                    items={[
+                        {
+                            id: 1,
+                            foo: 'foo',
+                            bar: 'bar',
+                        },
+                        {
+                            id: 2,
+                            foo: 'foo',
+                            bar: 'bar',
+                        },
+                    ]}
+                />
             </div>
         );
     }

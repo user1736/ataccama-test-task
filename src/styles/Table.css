@@ -1,0 +1,41 @@
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.table__caption,
+.table__head,
+.table__cell {
+  border: 2px solid #ddd;
+}
+
+.table__caption,
+.table__cell {
+  padding: 10px;
+}
+
+.table__caption,
+.table__head {
+  font-weight: bold;
+}
+
+.table__caption {
+  border-bottom: none;
+  text-align: left;
+}
+
+.table__head {
+  padding: 12px 10px;
+  background: #ececec;
+  border-right-color: #ececec;
+}
+
+.table__head:last-child {
+  border-right-color: #ddd;
+}
+
+.table__head--toggle {
+  width: 20px;
+}

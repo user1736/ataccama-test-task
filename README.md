@@ -23,3 +23,13 @@ Since sample data looks pretty organised and already contains keys, I decided to
   * patients - root entity;
   * relatives - child entity, hides under `has_relatives` key in `kids`;
   * phones - child entity, hides under `has_phone` key in `kids`;
+
+## Styles
+
+Considering project size is quite small and design isn't primary task focus, I decided to go on with css, without any extra preprocessors. However, to ensure css extensibility, I picked BEM methodology.
+
+Things I keep in mind but omit for development speed:
+1. add css modules;
+1. add css linting tool (like [CSSComb](http://csscomb.com/));
+1. add less and extract common style things (like colors, fonts, etc);
+1. add proper reset.css;
