@@ -23,17 +23,18 @@ const generateColumns = items => {
 const generateItem = (normalizedItem, item) => {
     const { id, name } = normalizedItem;
     const { kids, ...data } = item;
-    const childEntities = Object.keys(kids);
-    let children;
-
-    if (childEntities.length) {
-        children = childEntities.map(title => <ChildTable key={title} title={title} id={id} name={name} />);
-    }
+    const children = Object.keys(kids).reduce(
+        (children, entityKey) =>
+            kids[entityKey].length
+                ? [...children, <ChildTable key={entityKey} parentId={id} parentName={name} entityKey={entityKey} />]
+                : children,
+        []
+    );
 
     return {
         ...data,
         id,
-        children,
+        children: children.length ? children : undefined,
     };
 };
 

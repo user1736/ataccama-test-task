@@ -24,4 +24,6 @@ const schemas = availableSchemas.reduce(
     {}
 );
 
-export {schemas};
+const getEntityNameByKey = (key) => schemas[key] ? schemas[key].name : null;
+
+export {schemas, getEntityNameByKey};
