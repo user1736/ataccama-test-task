@@ -1,17 +1,14 @@
 const availableSchemas = [
     {
-        name: 'patients',
-        key: 'root',
+        name: 'root',
         getId: item => item.data['Identification number'],
     },
     {
-        name: 'relatives',
-        key: 'has_relatives',
+        name: 'has_relatives',
         getId: item => item.data['Relative ID'],
     },
     {
-        name: 'phones',
-        key: 'has_phone',
+        name: 'has_phone',
         getId: item => item.data['Phone ID'],
     },
 ];
@@ -19,11 +16,9 @@ const availableSchemas = [
 const schemas = availableSchemas.reduce(
     (seed, schema) => ({
         ...seed,
-        [schema.key]: schema,
+        [schema.name]: schema,
     }),
     {}
 );
 
-const getEntityNameByKey = (key) => schemas[key] ? schemas[key].name : null;
-
-export {schemas, getEntityNameByKey};
+export {schemas};

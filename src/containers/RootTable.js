@@ -1,5 +1,6 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Table from '../components/Table';
-import {getRootViewData} from '../selectors';
+import { getRootViewData } from '../selectors';
+import { onItemDelete } from '../actions';
 
-export default connect(state => getRootViewData(state))(Table);
+export default connect(state => getRootViewData(state), { onItemDelete })(Table);

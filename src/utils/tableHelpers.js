@@ -24,9 +24,9 @@ const generateItem = (normalizedItem, item) => {
     const { id, name } = normalizedItem;
     const { kids, ...data } = item;
     const children = Object.keys(kids).reduce(
-        (children, entityKey) =>
-            kids[entityKey].length
-                ? [...children, <ChildTable key={entityKey} parentId={id} parentName={name} entityKey={entityKey} />]
+        (children, entityName) =>
+            kids[entityName].length
+                ? [...children, <ChildTable key={entityName} parentId={id} parentName={name} entityName={entityName} />]
                 : children,
         []
     );
@@ -34,6 +34,7 @@ const generateItem = (normalizedItem, item) => {
     return {
         ...data,
         id,
+        name,
         children: children.length ? children : undefined,
     };
 };

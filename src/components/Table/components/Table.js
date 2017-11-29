@@ -6,6 +6,10 @@ import { columnsType, itemType } from '../const';
 import TableRow from './TableRow';
 
 const Table = ({ title, items, columns, className, onItemDelete }) => {
+    if (!items.length || !columns.length) {
+        return null;
+    }
+
     return (
         <table className={sn('table', className)}>
             {title != null && <caption className="table__caption">{title}</caption>}
