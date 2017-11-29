@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import sn from 'classnames';
 import '../styles/Table.css';
 import { columnsType, itemType } from '../const';
-import ToggleButton from './ToggleButton';
+import Button from './Button';
 
 class TableRow extends React.Component {
     static propTypes = {
         item: itemType.isRequired,
         columns: columnsType.isRequired,
         order: PropTypes.oneOf(['even', 'odd']),
+        onDelete: PropTypes.func.isRequired,
     };
 
     constructor(props) {
@@ -24,7 +25,7 @@ class TableRow extends React.Component {
 
     renderRow() {
         const { expanded } = this.state;
-        const { item, columns, order } = this.props;
+        const { item, columns, order, onDelete } = this.props;
 
         return (
             <tr
@@ -35,13 +36,16 @@ class TableRow extends React.Component {
                 })}
             >
                 <td key="$first" className="table__cell">
-                    {!!item.children && <ToggleButton opened={expanded} onClick={this._toggle} />}
+                    {!!item.children && <Button text={expanded ? '-' : '+'} onClick={this._toggle} />}
                 </td>
                 {columns.map(col => (
                     <td key={col.name} className="table__cell">
                         {col.renderItem(item)}
                     </td>
                 ))}
+                <td key="$last" className="table__cell">
+                    <Button text="x" onClick={onDelete} />
+                </td>
             </tr>
         );
     }
@@ -54,7 +58,7 @@ class TableRow extends React.Component {
 
         return (
             <tr key="extra">
-                <td className="table__cell" colSpan={columns.length + 1}>
+                <td className="table__cell" colSpan={columns.length + 2}>
                     {children}
                 </td>
             </tr>

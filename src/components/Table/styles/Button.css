@@ -1,4 +1,4 @@
-.toggle-button {
+.button {
   width: 26px;
   padding: 4px;
   border: none;
@@ -13,9 +13,9 @@
   color: #333;
 
   transition: color 0.3s ease-out;
+  cursor: pointer;
 }
 
-.toggle-button:hover {
-  cursor: pointer;
+.button:hover {
   color: #1976D2;
 }
