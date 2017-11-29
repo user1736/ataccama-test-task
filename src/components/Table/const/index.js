@@ -9,5 +9,6 @@ export const columnsType = PropTypes.arrayOf(
 );
 
 export const itemType = PropTypes.shape({
-  children: PropTypes.object,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 });

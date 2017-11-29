@@ -2,7 +2,7 @@
   border-collapse: collapse;
   border-spacing: 0;
   color: #333;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .table__caption,
@@ -13,7 +13,7 @@
 
 .table__caption,
 .table__cell {
-  padding: 10px;
+  padding: 8px;
 }
 
 .table__caption,
@@ -35,7 +35,7 @@
 }
 
 .table__head {
-  padding: 12px 10px;
+  padding: 10px 8px;
   background: #ececec;
   border-right-color: #ececec;
 }
