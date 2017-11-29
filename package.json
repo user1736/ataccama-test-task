@@ -1,7 +1,8 @@
 {
   "name": "ataccama-test-task",
   "version": "0.1.0",
-  "private": true,
+  "author": "Dmitrii Samsonov <user1736@yandex.ru>",
+  "license": "WTFPL",
   "dependencies": {
     "classnames": "2.2.5",
     "react": "16.1.1",
